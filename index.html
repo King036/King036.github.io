@@ -1,0 +1,160 @@
+import { motion } from "framer-motion";
+
+export default function PortfolioRyanLima() {
+  const projects = [
+    {
+      name: "Desastres",
+      desc: "Projeto web estático com múltiplas páginas (fase_1/2/3), incluindo telas temáticas como inundação e deslizamento.",
+      tech: "HTML · CSS · JS",
+      link: "https://github.com/King036/Desastres",
+    },
+    {
+      name: "xadrez",
+      desc: "Recursos visuais e experimentos para um jogo de xadrez.",
+      tech: "Imagens · Assets",
+      link: "https://github.com/King036/xadrez",
+    },
+    {
+      name: "SlideemHTML",
+      desc: "Trabalho de faculdade — páginas HTML e CSS com imagens e README.",
+      tech: "HTML · CSS",
+      link: "https://github.com/King036/SlideemHTML",
+    },
+    {
+      name: "Projetos de Extensão (2022)",
+      desc: "Repositório criado para atividade de extensão acadêmica.",
+      tech: "Organização",
+      link: "https://github.com/King036/AtividadeProjetos-de-Extens-o-2022",
+    },
+  ];
+
+  const skills = [
+    "Python","Java","HTML","CSS","JavaScript","MySQL","C# / .NET","Git",
+  ];
+
+  const know = [
+    "REST","Angular","React","TypeScript","Linux","Android","PHP","Automação de QA"
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100 font-inter">
+      <header className="sticky top-0 z-30 backdrop-blur bg-slate-900/70 border-b border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-violet-500 rounded-xl"></div>
+            <h1 className="font-bold text-lg">Ryan Lima · Desenvolvedor</h1>
+          </div>
+          <nav className="flex gap-2 text-sm">
+            <a href="#projetos" className="px-3 py-2 rounded-lg hover:bg-slate-800">Projetos</a>
+            <a href="#experiencia" className="px-3 py-2 rounded-lg hover:bg-slate-800">Experiência</a>
+            <a href="#contato" className="px-3 py-2 rounded-lg hover:bg-slate-800">Contato</a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-4">
+        <section className="py-16 grid md:grid-cols-2 gap-10">
+          <div>
+            <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .4 }} className="inline-block px-4 py-1.5 text-cyan-300/90 border border-slate-700 rounded-full mb-4">
+              Segurança da Informação · Sistemas de Informação
+            </motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1, duration: .4 }} className="text-4xl font-extrabold leading-tight mb-3">
+              Olá, eu sou o Ryan 👋<br/>Programador focado em Python, Java e Web
+            </motion.h2>
+            <p className="text-slate-400 max-w-md mb-6">
+              Graduado em Sistemas de Informação e pós-graduando em Segurança da Informação. Experiência com ensino de programação, robótica educacional e suporte de TI.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="https://github.com/King036" target="_blank" className="bg-gradient-to-br from-cyan-400 to-violet-500 text-slate-950 font-semibold px-4 py-2 rounded-xl">GitHub: @King036</a>
+              <a href="https://www.linkedin.com/in/ryan-lima-0849a9201" target="_blank" className="border border-slate-700 px-4 py-2 rounded-xl">LinkedIn</a>
+              <a href="mailto:ryanfflima@gmail.com" className="border border-slate-700 px-4 py-2 rounded-xl">Email</a>
+              <a href="tel:+5531991579028" className="border border-slate-700 px-4 py-2 rounded-xl">WhatsApp</a>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="bg-slate-800/40 p-4 rounded-2xl border border-slate-700">
+              <h3 className="font-semibold mb-3">Stack principal</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {skills.map(s => <div key={s} className="text-center border border-slate-700 rounded-lg py-1 text-sm">{s}</div>)}
+              </div>
+            </div>
+            <div className="bg-slate-800/40 p-4 rounded-2xl border border-slate-700">
+              <h3 className="font-semibold mb-3">Conhecimentos</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {know.map(k => <div key={k} className="text-center border border-slate-700 rounded-lg py-1 text-sm">{k}</div>)}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projetos" className="py-10">
+          <h3 className="text-2xl font-semibold mb-1">Projetos em destaque</h3>
+          <p className="text-slate-400 mb-6">Alguns repositórios públicos do meu GitHub.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {projects.map(p => (
+              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .4 }} className="bg-slate-800/40 p-4 rounded-2xl border border-slate-700">
+                <div className="flex justify-between mb-2">
+                  <strong>{p.name}</strong>
+                  <span className="text-xs text-slate-400">{p.tech}</span>
+                </div>
+                <p className="text-slate-300 text-sm mb-3">{p.desc}</p>
+                <a href={p.link} target="_blank" className="text-cyan-300 text-sm font-semibold hover:underline">Ver repositório</a>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section id="experiencia" className="py-14 grid md:grid-cols-2 gap-6">
+          <div className="bg-slate-800/40 p-5 rounded-2xl border border-slate-700">
+            <h3 className="font-semibold text-lg mb-3">Experiência</h3>
+            <div className="space-y-3 text-sm">
+              <div>
+                <p className="text-cyan-300 font-semibold">ago/2024 — atual</p>
+                <p className="font-bold">Uppertech · Auxiliar de montagem</p>
+                <p className="text-slate-400">Suporte na montagem e testes de equipamentos automotivos.</p>
+              </div>
+              <div>
+                <p className="text-cyan-300 font-semibold">dez/2023 — mar/2024</p>
+                <p className="font-bold">CódigoKid · Instrutor de Robótica</p>
+                <p className="text-slate-400">Aulas práticas de lógica e programação para jovens.</p>
+              </div>
+              <div>
+                <p className="text-cyan-300 font-semibold">fev/2022 — ago/2022</p>
+                <p className="font-bold">Escola Est. Padre Menezes · Professor Java/HTML/CSS</p>
+              </div>
+              <div>
+                <p className="text-cyan-300 font-semibold">mai/2021 — fev/2022</p>
+                <p className="font-bold">Instituto Mix · Monitor de Informática</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-800/40 p-5 rounded-2xl border border-slate-700">
+            <h3 className="font-semibold text-lg mb-3">Formação & Certificações</h3>
+            <ul className="list-disc ml-5 space-y-1 text-sm">
+              <li>Pós-graduação: Segurança da Informação — Centro Universitário Una (2024–2025)</li>
+              <li>Bacharelado: Sistemas de Informação — Centro Universitário Una (2020–2024)</li>
+            </ul>
+            <p className="text-slate-400 mt-3 text-sm">Certificações: Scrum Fundamentals, Desenvolvimento .NET e QA, Cálculo Numérico, Trilha Eng. IA Microsoft, Ethical Hacking, Formação Front-end.</p>
+          </div>
+        </section>
+
+        <section id="contato" className="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 mb-10">
+          <h3 className="font-semibold text-lg mb-3">Contato</h3>
+          <p className="text-slate-400 mb-5 text-sm">Prefere falar por email ou WhatsApp? Estou aberto a desafios de desenvolvimento web, automação e QA.</p>
+          <div className="flex flex-wrap gap-3">
+            <a href="mailto:ryanfflima@gmail.com" className="bg-gradient-to-br from-cyan-400 to-violet-500 text-slate-950 font-semibold px-4 py-2 rounded-xl">ryanfflima@gmail.com</a>
+            <a href="tel:+5531991579028" className="border border-slate-700 px-4 py-2 rounded-xl">(+55) 31 99157‑9028</a>
+            <a href="https://github.com/King036" target="_blank" className="border border-slate-700 px-4 py-2 rounded-xl">GitHub</a>
+            <a href="https://www.linkedin.com/in/ryan-lima-0849a9201" target="_blank" className="border border-slate-700 px-4 py-2 rounded-xl">LinkedIn</a>
+          </div>
+        </section>
+      </main>
+
+      <footer className="text-center text-slate-500 pb-8">
+        © {new Date().getFullYear()} Ryan Lima — Feito com React + Tailwind + Framer Motion.
+      </footer>
+    </div>
+  );
+}
