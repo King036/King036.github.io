@@ -1,160 +1,221 @@
-import { motion } from "framer-motion";
-
-export default function PortfolioRyanLima() {
-  const projects = [
-    {
-      name: "Desastres",
-      desc: "Projeto web estático com múltiplas páginas (fase_1/2/3), incluindo telas temáticas como inundação e deslizamento.",
-      tech: "HTML · CSS · JS",
-      link: "https://github.com/King036/Desastres",
-    },
-    {
-      name: "xadrez",
-      desc: "Recursos visuais e experimentos para um jogo de xadrez.",
-      tech: "Imagens · Assets",
-      link: "https://github.com/King036/xadrez",
-    },
-    {
-      name: "SlideemHTML",
-      desc: "Trabalho de faculdade — páginas HTML e CSS com imagens e README.",
-      tech: "HTML · CSS",
-      link: "https://github.com/King036/SlideemHTML",
-    },
-    {
-      name: "Projetos de Extensão (2022)",
-      desc: "Repositório criado para atividade de extensão acadêmica.",
-      tech: "Organização",
-      link: "https://github.com/King036/AtividadeProjetos-de-Extens-o-2022",
-    },
-  ];
-
-  const skills = [
-    "Python","Java","HTML","CSS","JavaScript","MySQL","C# / .NET","Git",
-  ];
-
-  const know = [
-    "REST","Angular","React","TypeScript","Linux","Android","PHP","Automação de QA"
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100 font-inter">
-      <header className="sticky top-0 z-30 backdrop-blur bg-slate-900/70 border-b border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-violet-500 rounded-xl"></div>
-            <h1 className="font-bold text-lg">Ryan Lima · Desenvolvedor</h1>
-          </div>
-          <nav className="flex gap-2 text-sm">
-            <a href="#projetos" className="px-3 py-2 rounded-lg hover:bg-slate-800">Projetos</a>
-            <a href="#experiencia" className="px-3 py-2 rounded-lg hover:bg-slate-800">Experiência</a>
-            <a href="#contato" className="px-3 py-2 rounded-lg hover:bg-slate-800">Contato</a>
-          </nav>
-        </div>
-      </header>
-
-      <main className="max-w-6xl mx-auto px-4">
-        <section className="py-16 grid md:grid-cols-2 gap-10">
-          <div>
-            <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .4 }} className="inline-block px-4 py-1.5 text-cyan-300/90 border border-slate-700 rounded-full mb-4">
-              Segurança da Informação · Sistemas de Informação
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1, duration: .4 }} className="text-4xl font-extrabold leading-tight mb-3">
-              Olá, eu sou o Ryan 👋<br/>Programador focado em Python, Java e Web
-            </motion.h2>
-            <p className="text-slate-400 max-w-md mb-6">
-              Graduado em Sistemas de Informação e pós-graduando em Segurança da Informação. Experiência com ensino de programação, robótica educacional e suporte de TI.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://github.com/King036" target="_blank" className="bg-gradient-to-br from-cyan-400 to-violet-500 text-slate-950 font-semibold px-4 py-2 rounded-xl">GitHub: @King036</a>
-              <a href="https://www.linkedin.com/in/ryan-lima-0849a9201" target="_blank" className="border border-slate-700 px-4 py-2 rounded-xl">LinkedIn</a>
-              <a href="mailto:ryanfflima@gmail.com" className="border border-slate-700 px-4 py-2 rounded-xl">Email</a>
-              <a href="tel:+5531991579028" className="border border-slate-700 px-4 py-2 rounded-xl">WhatsApp</a>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="bg-slate-800/40 p-4 rounded-2xl border border-slate-700">
-              <h3 className="font-semibold mb-3">Stack principal</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {skills.map(s => <div key={s} className="text-center border border-slate-700 rounded-lg py-1 text-sm">{s}</div>)}
-              </div>
-            </div>
-            <div className="bg-slate-800/40 p-4 rounded-2xl border border-slate-700">
-              <h3 className="font-semibold mb-3">Conhecimentos</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {know.map(k => <div key={k} className="text-center border border-slate-700 rounded-lg py-1 text-sm">{k}</div>)}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="projetos" className="py-10">
-          <h3 className="text-2xl font-semibold mb-1">Projetos em destaque</h3>
-          <p className="text-slate-400 mb-6">Alguns repositórios públicos do meu GitHub.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.map(p => (
-              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .4 }} className="bg-slate-800/40 p-4 rounded-2xl border border-slate-700">
-                <div className="flex justify-between mb-2">
-                  <strong>{p.name}</strong>
-                  <span className="text-xs text-slate-400">{p.tech}</span>
-                </div>
-                <p className="text-slate-300 text-sm mb-3">{p.desc}</p>
-                <a href={p.link} target="_blank" className="text-cyan-300 text-sm font-semibold hover:underline">Ver repositório</a>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        <section id="experiencia" className="py-14 grid md:grid-cols-2 gap-6">
-          <div className="bg-slate-800/40 p-5 rounded-2xl border border-slate-700">
-            <h3 className="font-semibold text-lg mb-3">Experiência</h3>
-            <div className="space-y-3 text-sm">
-              <div>
-                <p className="text-cyan-300 font-semibold">ago/2024 — atual</p>
-                <p className="font-bold">Uppertech · Auxiliar de montagem</p>
-                <p className="text-slate-400">Suporte na montagem e testes de equipamentos automotivos.</p>
-              </div>
-              <div>
-                <p className="text-cyan-300 font-semibold">dez/2023 — mar/2024</p>
-                <p className="font-bold">CódigoKid · Instrutor de Robótica</p>
-                <p className="text-slate-400">Aulas práticas de lógica e programação para jovens.</p>
-              </div>
-              <div>
-                <p className="text-cyan-300 font-semibold">fev/2022 — ago/2022</p>
-                <p className="font-bold">Escola Est. Padre Menezes · Professor Java/HTML/CSS</p>
-              </div>
-              <div>
-                <p className="text-cyan-300 font-semibold">mai/2021 — fev/2022</p>
-                <p className="font-bold">Instituto Mix · Monitor de Informática</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-slate-800/40 p-5 rounded-2xl border border-slate-700">
-            <h3 className="font-semibold text-lg mb-3">Formação & Certificações</h3>
-            <ul className="list-disc ml-5 space-y-1 text-sm">
-              <li>Pós-graduação: Segurança da Informação — Centro Universitário Una (2024–2025)</li>
-              <li>Bacharelado: Sistemas de Informação — Centro Universitário Una (2020–2024)</li>
-            </ul>
-            <p className="text-slate-400 mt-3 text-sm">Certificações: Scrum Fundamentals, Desenvolvimento .NET e QA, Cálculo Numérico, Trilha Eng. IA Microsoft, Ethical Hacking, Formação Front-end.</p>
-          </div>
-        </section>
-
-        <section id="contato" className="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 mb-10">
-          <h3 className="font-semibold text-lg mb-3">Contato</h3>
-          <p className="text-slate-400 mb-5 text-sm">Prefere falar por email ou WhatsApp? Estou aberto a desafios de desenvolvimento web, automação e QA.</p>
-          <div className="flex flex-wrap gap-3">
-            <a href="mailto:ryanfflima@gmail.com" className="bg-gradient-to-br from-cyan-400 to-violet-500 text-slate-950 font-semibold px-4 py-2 rounded-xl">ryanfflima@gmail.com</a>
-            <a href="tel:+5531991579028" className="border border-slate-700 px-4 py-2 rounded-xl">(+55) 31 99157‑9028</a>
-            <a href="https://github.com/King036" target="_blank" className="border border-slate-700 px-4 py-2 rounded-xl">GitHub</a>
-            <a href="https://www.linkedin.com/in/ryan-lima-0849a9201" target="_blank" className="border border-slate-700 px-4 py-2 rounded-xl">LinkedIn</a>
-          </div>
-        </section>
-      </main>
-
-      <footer className="text-center text-slate-500 pb-8">
-        © {new Date().getFullYear()} Ryan Lima — Feito com React + Tailwind + Framer Motion.
-      </footer>
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryan Lima — Portfólio</title>
+  <meta name="description" content="Portfólio de Ryan Lima: desenvolvedor com foco em Python, Java, HTML/CSS/JS e segurança da informação." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#121821; --muted:#8da2b5; --text:#eef5ff; --brand:#6ae3ff; --accent:#8b5cf6;
+      --ring: rgba(106,227,255,.4);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b0f14,#0d1219 30%,#0b0f14 100%);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);background:rgba(11,15,20,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:30}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:0 0 0 6px rgba(106,227,255,.08)}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.4px}
+    .nav a.btn{padding:10px 14px;border:1px solid rgba(255,255,255,.12);border-radius:12px;display:inline-flex;align-items:center;gap:10px}
+    .grid{display:grid;gap:22px}
+    .hero{padding:48px 0 28px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:28px}
+    .hero h2{font-size:44px;line-height:1.1;margin:0 0 10px;font-weight:800}
+    .hero p{color:var(--muted);margin:0 0 22px}
+    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.12);padding:8px 12px;border-radius:999px;color:#cdeaff}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    .btn{background:#0f1622;border:1px solid rgba(255,255,255,.12);padding:12px 16px;border-radius:14px;font-weight:600}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#081018;border:none}
+    .card{background:radial-gradient(80% 120% at 0% 0%, rgba(106,227,255,.08), transparent 40%),
+          radial-gradient(120% 120% at 100% 0%, rgba(139,92,246,.08), transparent 40%), var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px}
+    section{padding:22px 0}
+    h3{font-size:22px;margin:0 0 6px}
+    .muted{color:var(--muted);font-size:14px}
+    .skills{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+    .tag{padding:8px 10px;border-radius:12px;background:#0f1622;border:1px solid rgba(255,255,255,.08);font-weight:600;font-size:13px;text-align:center}
+    .timeline{display:grid;gap:14px}
+    .item{display:grid;gap:4px;padding:14px;border:1px dashed rgba(255,255,255,.12);border-radius:14px;background:#0c131d}
+    .when{font-weight:600;color:#bfe6ff}
+    .where{font-weight:700}
+    .projects{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .project .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .project .langs{font-size:12px;color:#b7c9db}
+    .project .links{display:flex;gap:10px;margin-top:10px}
+    footer{padding:26px 0 48px;color:#a8bed3;text-align:center}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.split{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1>Ryan Lima · Desenvolvedor</h1>
+      </div>
+      <nav>
+        <a class="btn" href="#projetos">Projetos</a>
+        <a class="btn" href="#experiencia">Experiência</a>
+        <a class="btn" href="#contato">Contato</a>
+      </nav>
     </div>
-  );
-}
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="pill">Segurança da Informação · Sistemas de Informação</span>
+        <h2>Olá, eu sou o Ryan 👋<br/>Programador focado em Python, Java e Web</h2>
+        <p>Graduado em Sistemas de Informação e pós-graduando em Segurança da Informação. Experiência com ensino de programação, robótica educacional e suporte de TI. Interessa-me construir soluções simples, bem testadas e acessíveis.</p>
+        <div class="cta">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://github.com/King036">GitHub: @King036</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ryan-lima-0849a9201">LinkedIn</a>
+          <a class="btn" href="mailto:ryanfflima@gmail.com">Email</a>
+          <a class="btn" href="tel:+5531991579028">WhatsApp</a>
+        </div>
+      </div>
+      <div class="card split">
+        <div>
+          <h3>Stack principal</h3>
+          <div class="grid skills" style="margin-top:10px">
+            <div class="tag">Python</div>
+            <div class="tag">Java</div>
+            <div class="tag">HTML</div>
+            <div class="tag">CSS</div>
+            <div class="tag">JavaScript</div>
+            <div class="tag">MySQL</div>
+            <div class="tag">C# / .NET</div>
+            <div class="tag">Git</div>
+          </div>
+        </div>
+        <div>
+          <h3>Conhecimentos</h3>
+          <div class="grid skills" style="margin-top:10px">
+            <div class="tag">REST</div>
+            <div class="tag">Angular</div>
+            <div class="tag">React</div>
+            <div class="tag">TypeScript</div>
+            <div class="tag">Linux</div>
+            <div class="tag">Android</div>
+            <div class="tag">PHP</div>
+            <div class="tag">Automação de QA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h3>Projetos em destaque</h3>
+      <p class="muted">Alguns repositórios públicos do meu GitHub.</p>
+      <div class="grid projects" style="margin-top:12px">
+        <article class="card project">
+          <div class="top">
+            <strong>Desastres</strong>
+            <span class="langs">HTML · CSS · JS</span>
+          </div>
+          <p>Projeto web estático com múltiplas páginas (fase_1/2/3), incluindo telas temáticas como inundação e deslizamento.</p>
+          <div class="links">
+            <a class="btn" target="_blank" rel="noopener" href="https://github.com/King036/Desastres">Repositório</a>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="top">
+            <strong>xadrez</strong>
+            <span class="langs">Imagens · Assets</span>
+          </div>
+          <p>Recursos visuais (peças, tabuleiro) e experimentos relacionados a um jogo de xadrez.</p>
+          <div class="links">
+            <a class="btn" target="_blank" rel="noopener" href="https://github.com/King036/xadrez">Repositório</a>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="top">
+            <strong>SlideemHTML</strong>
+            <span class="langs">HTML · CSS</span>
+          </div>
+          <p>Trabalho de faculdade — páginas HTML com imagens e folha de estilo, com instruções no README.</p>
+          <div class="links">
+            <a class="btn" target="_blank" rel="noopener" href="https://github.com/King036/SlideemHTML">Repositório</a>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="top">
+            <strong>Projetos de Extensão (2022)</strong>
+            <span class="langs">Organização</span>
+          </div>
+          <p>Repositório criado para atividade de extensão acadêmica.</p>
+          <div class="links">
+            <a class="btn" target="_blank" rel="noopener" href="https://github.com/King036/AtividadeProjetos-de-Extens-o-2022">Repositório</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia" class="split">
+      <div class="card">
+        <h3>Experiência</h3>
+        <div class="timeline" style="margin-top:10px">
+          <div class="item">
+            <div class="when">ago/2024 — atual</div>
+            <div class="where">Uppertech · Auxiliar de montagem</div>
+            <div class="muted">Suporte na montagem e testes de equipamentos automotivos.</div>
+          </div>
+          <div class="item">
+            <div class="when">dez/2023 — mar/2024</div>
+            <div class="where">CódigoKid · Instrutor de Robótica</div>
+            <div class="muted">Aulas práticas de lógica, programação e robótica para jovens.</div>
+          </div>
+          <div class="item">
+            <div class="when">out/2022 — dez/2022</div>
+            <div class="where">Instituto Mix · Monitor de Informática</div>
+          </div>
+          <div class="item">
+            <div class="when">fev/2022 — ago/2022</div>
+            <div class="where">Escola Est. Padre Menezes · Professor Java/HTML/CSS</div>
+          </div>
+          <div class="item">
+            <div class="when">mai/2021 — fev/2022</div>
+            <div class="where">Instituto Mix · Monitor de Informática</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Formação & Certificações</h3>
+        <ul style="margin:10px 0 0 18px">
+          <li>Pós-graduação: Segurança da Informação — Centro Universitário Una (2024–2025)</li>
+          <li>Bacharelado: Sistemas de Informação — Centro Universitário Una (2020–2024)</li>
+        </ul>
+        <p class="muted" style="margin-top:8px">Certificações: Scrum Fundamentals, Desenvolvimento .NET e QA, Cálculo Numérico, Trilha Eng. IA Microsoft, Ethical Hacking (fundamentos), Formação Front-end.</p>
+      </div>
+    </section>
+
+    <section id="contato" class="card">
+      <h3>Contato</h3>
+      <p class="muted">Prefere falar por email ou WhatsApp? Estou aberto a desafios de desenvolvimento web, automação e QA.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:ryanfflima@gmail.com">ryanfflima@gmail.com</a>
+        <a class="btn" href="tel:+5531991579028">(+55) 31 99157‑9028</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://github.com/King036">GitHub</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ryan-lima-0849a9201">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Ryan Lima — Feito com HTML + CSS. Hospede no GitHub Pages ou Netlify.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
